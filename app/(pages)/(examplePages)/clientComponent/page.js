@@ -3,6 +3,8 @@ import { clientComponentApiEndpoints } from "@/app/_services/apiEndpoints";
 import { useGetQuery } from "@/app/_services/networkRequestServices";
 import { queryKeys } from "@/app/_services/queryKeys";
 import React from "react";
+import { Slider } from "@/components/ui/slider";
+import { Switch } from "@/components/ui/switch";
 
 const ClientComponentFetching = () => {
   const { data, isLoading } = useGetQuery(
@@ -20,6 +22,8 @@ const ClientComponentFetching = () => {
           <li key={item?.id}>{item?.title}</li>
         ))}
       </ul>
+      <Slider min={0} max={100} className="w-40 bg-red-600" />
+      <Switch id="airplane-mode" />
     </>
   );
 };
