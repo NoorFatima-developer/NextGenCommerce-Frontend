@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
         <ClientProvider>
           <Link href="/clientComponent">Client component</Link>
           <Link href="/serverComponent">Server component</Link>
+          <Link href="/">Home</Link>
           {children}
         </ClientProvider>
       </body>

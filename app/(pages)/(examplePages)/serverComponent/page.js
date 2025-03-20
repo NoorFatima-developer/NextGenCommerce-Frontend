@@ -1,5 +1,6 @@
 import { serverComponentApiEndpoints } from "@/app/_services/apiEndpoints";
 import React from "react";
+import BasicForm from "./components/BasicForm";
 
 async function fetchProducts() {
   return await fetch(
@@ -19,6 +20,7 @@ const ServerComponentExample = async () => {
           <li key={item?.id}>{item?.title}</li>
         ))}
       </ul>
+      <BasicForm />
     </>
   );
 };
