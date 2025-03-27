@@ -1,4 +1,5 @@
 import React from "react";
+import { Input } from "@/components/ui/input";
 
 const FormControlInput = ({
   type,
@@ -13,7 +14,7 @@ const FormControlInput = ({
 }) => {
   return (
     <div>
-      <input
+      <Input
         type={type}
         name={name}
         placeholder={placeholder}

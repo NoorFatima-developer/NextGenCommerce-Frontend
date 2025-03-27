@@ -7,6 +7,7 @@ import {
   registerUserSchema,
 } from "@/app/_validationSchemas/registerUser";
 import FormControlInput from "@/app/_common/components/FormControlInput";
+import { Button } from "@/components/ui/button";
 
 const RegisterUserForm = () => {
   const { handleSubmit, handleChange, values, handleBlur, errors, touched } =
@@ -27,7 +28,7 @@ const RegisterUserForm = () => {
           value={values["name"]}
           errorFieldName={errors["name"]}
           touchedFieldName={touched["name"]}
-          className="w-3/4 md:w-3/4 lg:w-2/3 p-3 pb-2 mb-4 border-b-2 border-gray-300 focus:border-gray-500 outline-none bg-transparent mx-auto block"
+          className="w-3/4 md:w-3/4 lg:w-2/3 p-3 mx-auto"
           placeholder="Enter your name"
         />
 
@@ -39,7 +40,7 @@ const RegisterUserForm = () => {
           value={values["email"]}
           errorFieldName={errors["email"]}
           touchedFieldName={touched["email"]}
-          className="w-3/4 md:w-3/4 lg:w-2/3 p-3 pb-2 mb-4 border-b-2 border-gray-300 focus:border-gray-500 outline-none bg-transparent mx-auto block"
+          className="w-3/4 md:w-3/4 lg:w-2/3 p-3 mx-auto"
           placeholder="Enter your email"
         />
 
@@ -51,16 +52,16 @@ const RegisterUserForm = () => {
           value={values["password"]}
           errorFieldName={errors["password"]}
           touchedFieldName={touched["password"]}
-          className="w-3/4 md:w-3/4 lg:w-2/3 p-3 pb-2 mb-4 border-b-2 border-gray-300 focus:border-gray-500 outline-none bg-transparent mx-auto block"
+          className="w-3/4 md:w-3/4 lg:w-2/3 p-3 mx-auto"
           placeholder="Enter your password"
         />
 
-        <button
+        <Button
           type="submit"
-          className="w-3/4 md:w-3/4 lg:w-2/3 p-3 pb-2 mb-4 bg-[#DB4444] hover:bg-[#E07575] text-white py-3 rounded-md mx-auto block"
+          className="w-3/4 md:w-3/4 lg:w-2/3 bg-[#DB4444] hover:bg-[#E07575] text-white mx-auto block"
         >
           Create Account
-        </button>
+        </Button>
       </form>
     </div>
   );
