@@ -1,3 +1,4 @@
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClientProvider } from "./QueryClientProvider";
@@ -28,6 +29,7 @@ export default function RootLayout({ children }) {
           <Link href="/clientComponent">Client component</Link>
           <Link href="/serverComponent">Server component</Link>
           <Link href="/">Home</Link>
+          <Link href="/register">Register</Link>
           {children}
         </ClientProvider>
       </body>
