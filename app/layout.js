@@ -1,4 +1,3 @@
-
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClientProvider } from "./QueryClientProvider";
@@ -27,17 +26,17 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar/>
         <ClientProvider>
-          <Link href="/clientComponent">Client component</Link>
+          <Navbar />
+          {/* <Link href="/clientComponent">Client component</Link>
           <Link href="/serverComponent">Server component</Link>
           <Link href="/">Home</Link>
           <Link href="/register">Register</Link>
           <Link href="/forgot-password">ForgotPassword</Link>
-          <Link href="/reset-password">ResetPassword</Link>
+          <Link href="/reset-password">ResetPassword</Link> */}
           {children}
         </ClientProvider>
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );
