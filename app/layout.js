@@ -1,9 +1,10 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ClientProvider } from "./QueryClientProvider";
-import Link from "next/link";
 import Navbar from "./_common/components/header";
 import Footer from "./_common/components/footer";
+import BackToTopButton from "./_components/back-to-top-button";
+import { CartProvider } from "./_contexts/CartContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,7 +35,10 @@ export default function RootLayout({ children }) {
           <Link href="/register">Register</Link>
           <Link href="/forgot-password">ForgotPassword</Link>
           <Link href="/reset-password">ResetPassword</Link> */}
+          <CartProvider>
           {children}
+          </CartProvider>
+          <BackToTopButton/>
         </ClientProvider>
         <Footer />
       </body>

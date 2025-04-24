@@ -1,8 +1,11 @@
-import Link from "next/link";
-import { ChevronDown, Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
+"use client"
 
+import Link from "next/link";
+import { ChevronDown, Heart, Search, ShoppingCart } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import ProfileMenu from "@/app/_components/ProfileMenu";
 export default function Navbar() {
+  
   return (
     <main className="flex flex-col">
       {/* Announcement Bar */}
@@ -53,13 +56,21 @@ export default function Navbar() {
             </div>
 
             {/* Search Bar */}
-            <div className="flex items-center bg-gray-100 rounded-md px-3 py-2">
+            <div className="flex items-center gap-4">
+            <div className="flex items-center bg-gray-100 rounded-md px-2 py-2">
               <Input
                 type="text"
                 placeholder="What are you looking for?"
-                className="bg-transparent border-none focus:outline-none focus:ring-0 w-40 md:w-60"
+                className="bg-transparent border-none focus:outline-none focus:ring-0 w-40 md:w-60 "
               />
-              <Search className="h-5 w-5 text-gray-500" />
+              <Search className="h-6 w-5 text-gray-800 " />
+            </div>
+
+            {/* Heart Icon */}
+            <Heart className="h-5 w-5 text-gray-700" />
+            {/* ShoppingCart */}
+            <ShoppingCart className="text-gray-700"/>
+             <ProfileMenu/>
             </div>
           </div>
         </div>
