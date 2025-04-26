@@ -5,6 +5,8 @@ import Navbar from "./_common/components/header";
 import Footer from "./_common/components/footer";
 import BackToTopButton from "./_components/back-to-top-button";
 import { CartProvider } from "./_contexts/CartContext";
+import { AuthProvider } from "./_contexts/AuthContext";
+import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,19 +30,16 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ClientProvider>
-          <Navbar />
-          {/* <Link href="/clientComponent">Client component</Link>
-          <Link href="/serverComponent">Server component</Link>
-          <Link href="/">Home</Link>
-          <Link href="/register">Register</Link>
-          <Link href="/forgot-password">ForgotPassword</Link>
-          <Link href="/reset-password">ResetPassword</Link> */}
-          <CartProvider>
-          {children}
-          </CartProvider>
-          <BackToTopButton/>
+          <AuthProvider>
+            <CartProvider>
+              <Navbar />
+              {children}
+            </CartProvider>
+            <BackToTopButton />
+          </AuthProvider>
         </ClientProvider>
         <Footer />
+        <Toaster />
       </body>
     </html>
   );
