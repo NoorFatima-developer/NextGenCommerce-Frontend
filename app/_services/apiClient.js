@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const getUrl = (relativeUrl) =>
-  `${process.env.NEXT_PUBLIC_BACKEND_API_DUMMY_URL}${relativeUrl}`;
+  `${process.env.NEXT_PUBLIC_BACKEND_API_URL}${relativeUrl}`;
 
 export const performGetRequest = ({ url, params = {} }) =>
   axios.get(getUrl(url), { params });

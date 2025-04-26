@@ -8,13 +8,17 @@ import {
 } from "@/app/_validationSchemas/registerUser";
 import FormControlInput from "@/app/_common/components/FormControlInput";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "@/app/_contexts/AuthContext";
+import toast from "react-hot-toast";
 
 const RegisterUserForm = () => {
   const { handleSubmit, handleChange, values, handleBlur, errors, touched } =
     useFormikForm(registerUserInitialValues, onSubmit, registerUserSchema);
 
+  const { register, loadingRegister } = useAuth();
+
   function onSubmit(values) {
-    console.log(values);
+    register(values);
   }
 
   return (
@@ -60,7 +64,7 @@ const RegisterUserForm = () => {
           type="submit"
           className="w-3/4 md:w-3/4 lg:w-2/3 bg-[#DB4444] hover:bg-[#E07575] text-white mx-auto block"
         >
-          Create Account
+          {loadingRegister ? "Loading..." : "Register"}
         </Button>
       </form>
     </div>

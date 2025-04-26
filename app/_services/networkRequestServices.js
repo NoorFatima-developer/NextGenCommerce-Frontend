@@ -23,8 +23,8 @@ export const useGetQuery = (key, url, params = {}, options) => {
 
 export const usePostMutation = (url, onSuccess, onError) => {
   return useMutation({
-    mutationFn: ({ data, params }) => {
-      return performPostRequest({ url, data, params });
+    mutationFn: (data) => {
+      return performPostRequest({ url, payload: data });
     },
     onSuccess,
     onError,
